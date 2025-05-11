@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "react-router-dom": "^7.4.0"
+    "react-calendar": "^5.1.0",
+    "react-datepicker": "^8.3.0",
+    "react-router-dom": "^7.4.0",
+    "recharts": "^2.15.2"
   }
 }

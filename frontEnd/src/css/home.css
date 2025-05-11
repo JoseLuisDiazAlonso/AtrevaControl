@@ -1,0 +1,131 @@
+/* Contenedor general de la página */
+.contenedor {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  background-color: #96e395;
+  /* Fondo general */
+  overflow-y: auto;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+}
+
+/* Layout principal con formulario a la izquierda y el resto a la derecha */
+.contenido {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Estilo del formulario */
+.formulario {
+  flex: 0 0 300px;
+  background-color: #cef4d5;
+  /* Color más claro que el fondo general */
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input,
+form button {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Contenedor de la tabla y el gráfico */
+.datos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+/* Tarjetas de tabla y gráfico */
+.tabla-container,
+.grafico-container {
+  background-color: #f2f7f3;
+  /* Misma claridad que el formulario */
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 100%;
+  overflow: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla */
+table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+thead {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+  }
+
+  .formulario {
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .datos {
+    overflow: visible;
+  }
+
+  .tabla-container,
+  .grafico-container {
+    min-width: unset;
+    width: 100%;
+    margin-top: 10px;
+  }
+}

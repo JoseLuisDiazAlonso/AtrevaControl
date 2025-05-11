@@ -1,9 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import NavBar from "./components/navBar";
 import Login from "./pages/Login";
-import Gasolina from "./pages/Gasolina";
-import Incidencias from "./pages/Incidencias";
 import Home from "./pages/Home";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 function App() {
@@ -13,9 +11,11 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Login/>}/>
-        <Route path="/Home" element={<Home/>}/>
-        <Route path="/gasolina" element={<Gasolina/>}/>
-        <Route path="/incidencias" element={<Incidencias/>}/>
+        <Route path="/Home" element={
+          <ProtectedRoute>
+            <Home/>
+          </ProtectedRoute>
+        }/>
       </Routes>
     </>
   );
